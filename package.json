@@ -1,0 +1,21 @@
+{
+  "name": "ostaa",
+  "version": "0.0.0",
+  "description": "Shop front API client for Kauppa.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:Omnijar/Naamio/ostaa.git"
+  },
+  "keywords": [
+    "ecommerce",
+    "typescript",
+    "api",
+    "sdk"
+  ],
+  "author": "Phil J. Laszkowicz (phil@fillip.pro)",
+  "license": "MIT"
+}
