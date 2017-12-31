@@ -1,0 +1,28 @@
+{
+    "version": "2.6.2",
+    "compileOnSave": false,
+    "compilerOptions": {
+        "allowJs": true,
+        "declaration": false,
+        "inlineSourceMap": false,
+        "lib": [
+            "dom",
+            "es2015",
+            "es2015.promise",
+            "es6"
+        ],
+        "module": "commonjs",
+        "noImplicitAny": false,
+        "noLib": false,
+        "outDir": "../js",
+        "preserveConstEnums": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "target": "es6",
+        "typeRoots": [
+            "types"
+        ]
+    },
+    "exclude": []
+}
