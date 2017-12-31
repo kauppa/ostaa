@@ -1,0 +1,23 @@
+stages:
+  - test
+  - build
+  - deploy
+
+test:
+  image: node:9.3
+  stage: test
+  script: 
+    - echo "Running tests"
+    - make prepare
+    - make test
+
+build:
+  image: node:9.3
+  stage: build
+  script: 
+    - make prepare
+    - make build
+  artifacts:
+    paths:
+      - .build/
+    expire_in: 1 week
