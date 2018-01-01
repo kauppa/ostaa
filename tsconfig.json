@@ -24,5 +24,8 @@
             "types"
         ]
     },
-    "exclude": []
+    "include": [
+        //"./config/typescript/**/*",
+        "./src/**/*"
+    ]
 }
