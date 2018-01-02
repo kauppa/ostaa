@@ -7,9 +7,10 @@ test:
   image: node:9.3
   stage: test
   script: 
-    - echo "Running tests"
     - make prepare
     - make test
+  only:
+    - branches
 
 build:
   image: node:9.3
@@ -21,3 +22,7 @@ build:
     paths:
       - .build/
     expire_in: 1 week
+  only:
+    - schedules
+    - master
+    - release   
