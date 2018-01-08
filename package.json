@@ -4,7 +4,7 @@
   "description": "Shop front API client for Kauppa.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --config build/webpack.config.dev.js",
     "test": "mocha -r ts-node/register test/**/*.spec.ts"
   },
   "repository": {
