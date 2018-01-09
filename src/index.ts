@@ -1,6 +1,9 @@
-'use strict';
+export default class Client {
+    
+    public static buildClient() {
+        console.log(`Building client`);
+    }
 
-export class Ostaa {
-    constructor() {
+    private constructor() {
     }
 }

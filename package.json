@@ -2,7 +2,8 @@
   "name": "ostaa",
   "version": "0.0.0",
   "description": "Shop front API client for Kauppa.",
-  "main": "index.js",
+  "main": "lib/ostaa.js",
+  "types": "lib/types/index.d.ts",
   "scripts": {
     "build": "webpack --config build/webpack.config.dev.js",
     "test": "mocha -r ts-node/register test/**/*.spec.ts"

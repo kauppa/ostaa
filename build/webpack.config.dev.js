@@ -1,27 +1,15 @@
-var path = require('path');
-
+const config = require('./webpack.config.base');
+const path = require('path');
 const webpack = require('webpack');
 
-module.exports = {
-    entry: {
-        ostaa: "./src/index.ts",
-    },
-    module: {
-        rules: [
-            {
-                exclude: '/node_modules/',
-                loader: 'ts-loader',
-                test: /\.tsx?$/
-            }
-        ]
-    },
-    plugins: [
-    ],
-    output: {
-        filename: '[name].js',
-        path: path.resolve(__dirname, '../lib')
-    },
-    resolve: {
-        extensions: [".ts", ".json", ".js"]
-    }
-}
+config.devtool = '#eval-source-map';
+
+config.plugins = (config.plugins || []).concat([
+    new webpack.DefinePlugin({
+        'process.env': {
+            NODE_ENV: '"development"'
+        }
+    })
+]);
+
+module.exports = config;
