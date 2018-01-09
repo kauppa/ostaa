@@ -8,7 +8,6 @@ module.exports = {
         'ostaa': "./src/index.ts"
     },
     externals: {
-        vue: 'vue'
     },
     output: {
         filename: '[name].js',
