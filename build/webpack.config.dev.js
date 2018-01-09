@@ -19,7 +19,7 @@ module.exports = {
     ],
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, '.build/assets/scripts/js')
+        path: path.resolve(__dirname, '../lib')
     },
     resolve: {
         extensions: [".ts", ".json", ".js"]
