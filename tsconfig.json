@@ -2,8 +2,11 @@
     "version": "2.6.2",
     "compileOnSave": false,
     "compilerOptions": {
-        "allowJs": true,
-        "declaration": false,
+        "allowJs": false,
+        "alwaysStrict": true,
+        "declaration": true,
+        "declarationDir": "types",
+        "experimentalDecorators": true,
         "inlineSourceMap": false,
         "lib": [
             "dom",
@@ -11,21 +14,26 @@
             "es2015.promise",
             "es6"
         ],
-        "module": "commonjs",
+        "module": "es2015",
+        "moduleResolution": "node",
         "noImplicitAny": false,
+        "noImplicitThis": false,
         "noLib": false,
-        "outDir": "../js",
+        "outDir": "./",
         "preserveConstEnums": true,
         "removeComments": true,
         "sourceMap": true,
+        "strictNullChecks": true,
         "suppressImplicitAnyIndexErrors": true,
-        "target": "es6",
+        "target": "es5",
         "typeRoots": [
             "types"
         ]
     },
     "include": [
-        //"./config/typescript/**/*",
-        "./src/**/*"
+        "./src/**/*.ts"
+    ],
+    "exclude": [
+        "./node_modules/"
     ]
 }
