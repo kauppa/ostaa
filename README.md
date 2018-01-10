@@ -11,3 +11,12 @@ to build ecommerce into any web application. It's based on Kauppa's
 API and provides the ability to retrieve products and collections 
 from your shop, add products to a cart, and perform checkout tasks 
 checkout.
+
+## Installation
+**With Yarn:**
+```bash
+$ yarn add ostaa
+```
+**With NPM:**
+```bash
+$ npm install ostaa
