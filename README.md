@@ -20,3 +20,19 @@ $ yarn add ostaa
 **With NPM:**
 ```bash
 $ npm install ostaa
+
+## Builds
+Ostaa has four build versions: ES, CommonJS, AMD, and UMD.
+
+**ES, CommonJS:**
+```javascript
+import Client from 'ostaa';
+```
+**AMD:**
+```javascript
+import Client from 'ostaa/index.amd';
+```
+**UMD:**
+```javascript
+import Client from 'ostaa/index.umd';
+```
