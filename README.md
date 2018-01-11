@@ -20,6 +20,7 @@ $ yarn add ostaa
 **With NPM:**
 ```bash
 $ npm install ostaa
+```
 
 ## Builds
 Ostaa has four build versions: ES, CommonJS, AMD, and UMD.
@@ -35,4 +36,16 @@ import Client from 'ostaa/index.amd';
 **UMD:**
 ```javascript
 import Client from 'ostaa/index.umd';
+```
+
+## Examples
+
+### Initializing the Client
+```javascript
+import Client from 'ostaa';
+
+const client = Client.buildClient({
+  domain: 'your-shop-name.kauppa.naamio.cloud',
+  storefrontAccessToken: 'your-storefront-access-token'
+});
 ```
