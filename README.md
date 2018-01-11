@@ -66,3 +66,22 @@ client.product.fetch(productId).then((product) => {
   console.log(product);
 });
 ```
+
+### Fetching Collections
+```javascript
+// Fetch all collections, including their products
+client.collection.fetchAllWithProducts().then((collections) => {
+  // Do something with the collections
+  console.log(collections);
+  console.log(collections[0].products);
+});
+
+// Fetch a single collection by ID, including its products
+const collectionId = 'Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzM2OTMxMjU4NA==';
+
+client.collection.fetchWithProducts(collectionId).then((collection) => {
+  // Do something with the collection
+  console.log(collection);
+  console.log(collection.products);
+});
+```
