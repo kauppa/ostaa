@@ -49,3 +49,20 @@ const client = Client.buildClient({
   storefrontAccessToken: 'your-storefront-access-token'
 });
 ```
+
+### Fetching Products
+```javascript
+// Fetch all products in your shop
+client.product.fetchAll().then((products) => {
+  // Do something with the products
+  console.log(products);
+});
+
+// Fetch a single product by ID
+const productId = 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc4NTc5ODkzODQ=';
+
+client.product.fetch(productId).then((product) => {
+  // Do something with the product
+  console.log(product);
+});
+```
