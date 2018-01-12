@@ -85,3 +85,68 @@ client.collection.fetchWithProducts(collectionId).then((collection) => {
   console.log(collection.products);
 });
 ```
+
+### Creating a Checkout
+```javascript
+// Create an empty checkout
+client.checkout.create().then((checkout) => {
+  // Do something with the checkout
+  console.log(checkout);
+});
+```
+
+### Adding Line Items
+```javascript
+const checkoutId = 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0SW1hZ2UvMTgyMTc3ODc1OTI='; // ID of an existing checkout
+const lineItemsToAdd = [
+  {variantId: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0VmFyaWFudC8yOTEwNjAyMjc5Mg==', quantity: 5}
+];
+
+// Add an item to the checkout
+client.checkout.addLineItems(checkoutId, lineItemsToAdd).then((checkout) => {
+  // Do something with the updated checkout
+  console.log(checkout.lineItems); // Array with one additional line item
+});
+```
+
+### Updating Line Items
+```javascript
+const checkoutId = 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0SW1hZ2UvMTgyMTc3ODc1OTI='; // ID of an existing checkout
+const lineItemsToUpdate = [
+  {id: 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc4NTc5ODkzODQ=', quantity: 2}
+];
+
+// Update the line item on the checkout (change the quantity or variant)
+client.checkout.updateLineItems(checkoutId, lineItemsToUpdate).then((checkout) => {
+  // Do something with the updated checkout
+  console.log(checkout.lineItems); // Quantity of line item 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc4NTc5ODkzODQ=' updated to 2
+});
+```
+
+### Removing Line Items
+```javascript
+const checkoutId = 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0SW1hZ2UvMTgyMTc3ODc1OTI='; // ID of an existing checkout
+const lineItemIdsToRemove = [
+  'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc4NTc5ODkzODQ='
+];
+
+// Remove an item from the checkout
+client.checkout.removeLineItems(checkoutId, lineItemIdsToRemove).then((checkout) => {
+  // Do something with the updated checkout
+  console.log(checkout.lineItems); // Checkout with line item 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0Lzc4NTc5ODkzODQ=' removed
+});
+```
+
+### Fetching a Checkout
+```javascript
+const checkoutId = '2U4NWNkYzI4ZWEyOTdlOD9rZXk9MDVjMzY3Zjk3YWM0YWJjNGRhMTkwMDgwYTUzOGJmYmI='
+
+client.checkout.fetch(checkoutId).then((checkout) => {
+  // Do something with the checkout
+  console.log(checkout);
+});
+```
+
+## License
+
+MIT, see [LICENSE](https://github.com/naamio/ostaa/blob/master/LICENSE.txt) for details.
