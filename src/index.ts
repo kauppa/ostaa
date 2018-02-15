@@ -1,9 +1,3 @@
-export default class Client {
-    
-    public static buildClient() {
-        console.log(`Building client`);
-    }
+import Client from './client';
 
-    private constructor() {
-    }
-}
+export default Client;
