@@ -1,5 +1,7 @@
 import * as log from './util/logging';
 
+import Config from './Config';
+
 /**
  * Storefront client for Kauppa.
  */
@@ -16,7 +18,8 @@ class Client {
      * @constructs Client
      * @param {Config} config An instance of {@link Config} used to configure the Client.
      */
-    private constructor() {
+    private constructor(config: Config) {
+        
     }
 }
 
