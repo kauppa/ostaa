@@ -1,6 +1,6 @@
 import * as log from '../util/logging';
 
-import Client from '../client';
+import Client from '../Client';
 
 /** 
  * Base Resource object for querying and persisting data.
