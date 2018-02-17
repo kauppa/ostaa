@@ -1,5 +1,3 @@
-import log from "tipu";
-
 import Model from "../models/Model";
 
 /**
