@@ -1,5 +1,7 @@
-import ProductResource from './ProductResource';
+import Resource from "./Resource";
+
+export default Resource;
 
 export {
-    ProductResource
+    Resource
 }

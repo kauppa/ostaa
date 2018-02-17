@@ -1,6 +1,6 @@
-import * as log from '../util/logging';
+import log from "tipu";
 
-import Client from '../Client';
+import Client from "../Client";
 
 /** 
  * Base Resource object for querying and persisting data.
@@ -10,7 +10,7 @@ class Resource {
     /**
      * Client to use when querying or persisting resources.
      */
-    private client: Client;
+    protected client: Client;
 
     /**
      * Instantiates a new Resource object for querying and persisting

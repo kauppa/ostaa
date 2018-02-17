@@ -1,5 +1,7 @@
-import ProductModel from './ProductModel';
+import Model from './Model';
+
+export default Model;
 
 export {
-    ProductModel
+    Model
 }

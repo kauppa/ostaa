@@ -1,7 +1,7 @@
 {
   "name": "ostaa",
   "version": "0.0.0",
-  "description": "Shop front API client for Kauppa.",
+  "description": "Storefront API client for Kauppa.",
   "main": "lib/ostaa.js",
   "types": "lib/types/index.d.ts",
   "scripts": {
@@ -24,6 +24,7 @@
     "@types/mocha": "^2.2.48",
     "mocha": "^5.0.1",
     "mocha-webpack": "^1.0.1",
+    "tipu": "^0.0.0",
     "ts-loader": "^3.5.0",
     "ts-node": "^4.1.0",
     "typescript": "^2.7.1",
