@@ -28,36 +28,6 @@ class ProductResource extends Resource {
     fetch(id: string): Promise<ProductModel> {
         return this.client.get(`/products/${id}`);
     }
-
-    /**
-     * Persists a single product to the store service.
-     *
-     * @param product `ProductDataModel` to persist to the service.
-     * @returns A promise with a single `ProductModel` object, updated.
-     */
-    persist(product: ProductModel): Promise<ProductModel> {
-        return this.client.post<ProductModel>(`/products`, product);
-    }
-
-    /**
-     * Update a single product to the store service.
-     *
-     * @param product Updated `ProductDataModel` to pass to the service.
-     * @returns A promise with a single `ProductModel` object.
-     */
-    update(id: string, product: ProductModel): Promise<ProductModel> {
-        return this.client.put(`/products/${id}`, product);
-    }
-
-    /**
-     * Deletes a single product from the store service.
-     *
-     * @returns A promise with `ProductModel` from the service. If successful, the 
-     * `ProductModel` will be complete and correct. If unsuccessful the response will be empty.
-     */
-    delete(id: string): Promise<ProductModel> {
-        return this.client.delete(`/products/${id}`);
-    }
 }
 
 export default ProductResource;

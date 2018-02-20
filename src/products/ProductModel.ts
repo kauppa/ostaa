@@ -1,4 +1,8 @@
-import Model from "../models/Model";
+import log from "tipu";
+
+import { DimensionsModel, MeasurementModel, Model, PriceModel } from "../models";
+import AttributeModel from "../attributes/AttributeModel";
+import CategoryModel from "../categories/CategoryModel";
 
 /**
  * Product object representing editable product information in Kauppa.
@@ -7,24 +11,37 @@ class ProductModel extends Model {
 
     id: string;
 
-    title: string;
+    createdOn: string;
 
-    subtitle: string | null;
+    updatedAt: string;
 
-    description: string | null;
+    title: string = "";
 
-    overview: string | null;
+    subtitle: string = "";
 
-    tags: string[];
+    description: string = "";
 
-    color: string | null;
+    overview: string | null = null;
 
-    inventory: number;
+    categories: CategoryModel[] | null = [];
 
-    taxInclusive: boolean | null;
+    tags: string[] | null = [];
 
-    retailPrice: number | null;
+    dimensions: DimensionsModel | null = new DimensionsModel();
 
+    color: string | null = null;
+
+    weight: MeasurementModel | null = new MeasurementModel();
+
+    inventory: number = 0;
+
+    price: PriceModel = new PriceModel();
+
+    taxInclusive: boolean | null = null;
+
+    actualPrice: number | null = null;
+
+    custom: AttributeModel[] = [];
 }
 
 export default ProductModel;

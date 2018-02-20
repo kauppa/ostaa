@@ -17,8 +17,6 @@ class Config {
      */
     domain: string | null | undefined;
 
-    private _endpoint: string = "";
-
     /**
      * Endpoint relative to the domain where the APIs are located.
      *
@@ -27,13 +25,12 @@ class Config {
      * be built to point at the various URLs, rather than using
      * a single client throughout the application.
      */
-    get endpoint(): string {
-        return this._endpoint;
-    }
+    endpoint: string = "";
 
-    set endpoint(endpoint: string) {
-        this._endpoint = endpoint;
-    }
+    /**
+     * Flag to indicate whether a secure connection should be established.
+     */
+    secureConnection: boolean = false;
 }
 
 export default Config;

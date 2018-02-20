@@ -1,8 +1,10 @@
 import log from "tipu";
 
+import AttributeResource from "./attributes/AttributeResource";
+import CategoryResource from "./categories/CategoryResource";
 import Config from "./Config";
 import ProductResource from "./products/ProductResource";
-import Model from "./models";
+import { Model } from "./models";
 
 /**
  * Admin client for Kauppa.
@@ -24,6 +26,16 @@ class Client {
     readonly products: ProductResource;
 
     /**
+     * Attribute resource controller for persisting and fetching `Attribute` information.
+     */
+    readonly attributes: AttributeResource;
+
+    /**
+     * Category resource controller for persisting and fetching `Category` information.
+     */
+    readonly categories: CategoryResource;
+
+    /**
      * Normalized URL for the API endpoints (e.g. kauppa.naamio.cloud/api).
      */
     readonly url: String;
@@ -34,7 +46,8 @@ class Client {
      */
     private constructor(config: Config) {
         const version = `0.0.0`;
-        this.url = `https://${config.domain}${config.endpoint}`;
+        let protocol = config.secureConnection ? "https" : "http";
+        this.url = `${protocol}://${config.domain}${config.endpoint}`;
 
         const headers = {
             "X-SDK-Variant": "javascript",
@@ -43,6 +56,8 @@ class Client {
         }
 
         this.products = new ProductResource(this);
+        this.attributes = new AttributeResource(this);
+        this.categories = new CategoryResource(this);
     }
 
     /**
@@ -81,7 +96,7 @@ class Client {
      * @param data `Model` data object to persist to the service.
      * @returns A promise with a single `Model` object.
      */
-    post<T extends Model>(endpoint: string, data: T): Promise<T> {
+    post<T extends Model, U extends Model>(endpoint: string, data: T): Promise<U> {
         return fetch(`${this.url}${endpoint}`, {
             body: JSON.stringify(data),
             cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -125,7 +140,7 @@ class Client {
      * @param id Identity of the item in the service.
      * @returns A promise with a single `Model` of the object removed.
      */
-    delete<T extends Model>(endpoint: string): Promise<T> {
+    delete<T extends Model, U extends Model>(endpoint: string): Promise<U> {
         return fetch(`${this.url}${endpoint}`, {
             cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
             credentials: "same-origin", // include, same-origin, *omit
