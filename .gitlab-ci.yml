@@ -3,10 +3,28 @@ stages:
   - build
   - deploy
 
+before_script:
+  # install ssh-agent
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+
+  # run ssh-agent
+  - eval $(ssh-agent -s)
+
+  # add ssh key stored in SSH_PRIVATE_KEY variable to the agent store
+  - ssh-add <(echo "$SSH_PRIVATE_KEY")
+
+  # disable host key checking (NOTE: makes you susceptible to man-in-the-middle attacks)
+  # WARNING: use only in docker container, if you use it with shell you will overwrite your user's ssh config
+  - mkdir -p ~/.ssh
+  - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+  - git clone git@gitlab.com:Omnijar/Naamio/tipu.git
+  - cd tipu && make prepare && make build && npm link && cd ..
+  - npm link tipu
+
 test:
   image: node:9.3
   stage: test
-  script: 
+  script:
     - make prepare
     - make test
   only:
@@ -15,7 +33,7 @@ test:
 build:
   image: node:9.3
   stage: build
-  script: 
+  script:
     - make prepare
     - make build
   artifacts:
@@ -25,4 +43,4 @@ build:
   only:
     - schedules
     - master
-    - release   
+    - release
