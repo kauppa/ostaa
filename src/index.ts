@@ -1,4 +1,5 @@
 import AttributeModel from "./attributes/AttributeModel";
+import { CartModel, CartUnitModel } from "./cart";
 import CategoryModel from "./categories/CategoryModel";
 import { DimensionsModel, MeasurementModel, Model, PriceModel } from "./models";
 import { Status, StatusModel } from "./models";
@@ -9,6 +10,8 @@ export default Client;
 
 export {
     AttributeModel,
+    CartModel,
+    CartUnitModel,
     CategoryModel,
     DimensionsModel,
     MeasurementModel,

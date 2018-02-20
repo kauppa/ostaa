@@ -1,6 +1,7 @@
 import log from "tipu";
 
 import AttributeResource from "./attributes/AttributeResource";
+import CartResource from "./cart/CartResource";
 import CategoryResource from "./categories/CategoryResource";
 import Config from "./Config";
 import ProductResource from "./products/ProductResource";
@@ -21,17 +22,22 @@ class Client {
     }
 
     /**
-     * Product resource controller for persisting and fetching `Product` information.
+     * Cart resource for persisting and fetching `Cart` information.
+     */
+    readonly cart: CartResource;
+
+    /**
+     * Product resource controller for fetching `Product` information.
      */
     readonly products: ProductResource;
 
     /**
-     * Attribute resource controller for persisting and fetching `Attribute` information.
+     * Attribute resource controller for fetching `Attribute` information.
      */
     readonly attributes: AttributeResource;
 
     /**
-     * Category resource controller for persisting and fetching `Category` information.
+     * Category resource controller for fetching `Category` information.
      */
     readonly categories: CategoryResource;
 
@@ -55,6 +61,7 @@ class Client {
             "X-Kauppa-Access-Token": config.accessToken
         }
 
+        this.cart = new CartResource(this);
         this.products = new ProductResource(this);
         this.attributes = new AttributeResource(this);
         this.categories = new CategoryResource(this);
