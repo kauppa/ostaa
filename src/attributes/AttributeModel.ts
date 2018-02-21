@@ -5,17 +5,17 @@ import Model from "../models";
  */
 class AttributeModel extends Model {
 
-    id: string | null;
+    id: string | undefined;
 
-    name: string | null;
+    name: string | undefined;
 
-    type: string | null;
+    type: string | undefined;
 
-    variants: string[] | null;
+    variants: string[] | undefined;
 
     value: string;
 
-    unit: string | null;
+    unit: string | undefined;
 }
 
 export default AttributeModel;

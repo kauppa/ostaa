@@ -12,7 +12,7 @@ class StatusModel extends Model {
 
     status: Status;
 
-    code: number | null;
+    code: number | undefined;
 }
 
 export {

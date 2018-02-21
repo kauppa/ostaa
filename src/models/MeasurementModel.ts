@@ -2,9 +2,9 @@ import Model from "./Model";
 
 class MeasurementModel extends Model {
 
-    value: number | null = null;
+    value: number | undefined;
 
-    unit: string | null = null;
+    unit: string | undefined;
 }
 
 export default MeasurementModel;

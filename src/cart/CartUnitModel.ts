@@ -9,9 +9,9 @@ class CartUnitModel extends Model {
 
     quantity: number;
 
-    netPrice: PriceModel | null;
+    netPrice: PriceModel | undefined;
 
-    grossPrice: PriceModel | null;
+    grossPrice: PriceModel | undefined;
 }
 
 export default CartUnitModel;

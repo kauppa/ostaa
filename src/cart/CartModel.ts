@@ -13,9 +13,9 @@ class CartModel extends Model {
 
     items: CartUnitModel[] = [];
 
-    netPrice: PriceModel | null = null;
+    netPrice: PriceModel | undefined;
 
-    grossPrice: PriceModel | null = null;
+    grossPrice: PriceModel | undefined;
 }
 
 export default CartModel;
