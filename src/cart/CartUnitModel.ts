@@ -1,4 +1,5 @@
 import Model, { PriceModel } from "../models";
+import UnitTaxModel from "./UnitTaxModel";
 
 /**
  * A single cart item object.
@@ -10,6 +11,8 @@ class CartUnitModel extends Model {
     quantity: number;
 
     netPrice: PriceModel | undefined;
+
+    tax: UnitTaxModel | undefined;
 
     grossPrice: PriceModel | undefined;
 }
