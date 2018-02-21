@@ -1,6 +1,6 @@
 import log from "tipu";
 
-import { DimensionsModel, MeasurementModel, Model, PriceModel } from "../models";
+import { DimensionsModel, MeasurementModel, Model } from "../models";
 import AttributeModel from "../attributes/AttributeModel";
 import CategoryModel from "../categories/CategoryModel";
 
@@ -35,7 +35,12 @@ class ProductModel extends Model {
 
     inventory: number = 0;
 
-    price: PriceModel = new PriceModel();
+    price: number = 0;
+
+    /**
+     * ISO 4217 unit representation of the currency unit.
+     */
+    currency: string = "";
 
     taxInclusive: boolean | undefined;
 

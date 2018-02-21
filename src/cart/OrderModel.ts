@@ -1,5 +1,6 @@
-import Model, { PriceModel, MeasurementModel } from "../models";
+import Model, { MeasurementModel } from "../models";
 import AddressModel from "./AddressModel";
+import OrderUnitModel from "./OrderUnitModel";
 
 /**
  * Order object representing a customer's order.
@@ -14,17 +15,19 @@ class OrderModel extends Model {
 
     updatedAt: string;
 
-    products: string[];
+    products: OrderUnitModel[] = [];
 
     totalItems: number;
 
-    netPrice: PriceModel = new PriceModel();
+    currency: string;
 
-    totalTax: PriceModel = new PriceModel();
+    netPrice: number;
+
+    totalTax: number;
 
     appliedCoupons: string[];
 
-    grossPrice: PriceModel = new PriceModel();
+    grossPrice: number;
 
     totalWeight: MeasurementModel = new MeasurementModel();
 

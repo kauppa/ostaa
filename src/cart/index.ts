@@ -1,13 +1,13 @@
 import AddressModel from "./AddressModel";
 import CartModel from "./CartModel";
-import CartUnitModel from "./CartUnitModel";
+import OrderUnitModel from "./OrderUnitModel";
 import CheckoutModel from "./CheckoutModel";
 import OrderModel from "./OrderModel";
 
 export {
     AddressModel,
     CartModel,
-    CartUnitModel,
+    OrderUnitModel,
     CheckoutModel,
     OrderModel
 }

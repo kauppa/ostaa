@@ -1,7 +1,6 @@
 import Model from "../models";
-import CartUnitModel from "./CartUnitModel";
+import OrderUnitModel from "./OrderUnitModel";
 import CheckoutModel from "./CheckoutModel";
-import PriceModel from "../models";
 
 /**
  * Cart object containing cart items and coupons.
@@ -12,11 +11,13 @@ class CartModel extends Model {
 
     updatedAt: string;
 
-    items: CartUnitModel[] = [];
+    items: OrderUnitModel[] = [];
 
-    netPrice: PriceModel | undefined;
+    currency: string;
 
-    grossPrice: PriceModel | undefined;
+    netPrice: number | undefined;
+
+    grossPrice: number | undefined;
 
     checkoutData: CheckoutModel | undefined = new CheckoutModel();
 }
