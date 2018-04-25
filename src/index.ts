@@ -1,9 +1,23 @@
-export default class Client {
-    
-    public static buildClient() {
-        console.log(`Building client`);
-    }
+import AttributeModel from "./attributes/AttributeModel";
+import { CartModel, CartUnitModel } from "./cart";
+import CategoryModel from "./categories/CategoryModel";
+import { DimensionsModel, MeasurementModel, Model, PriceModel } from "./models";
+import { Status, StatusModel } from "./models";
+import { ProductModel } from "./products";
+import Client from "./Client";
 
-    private constructor() {
-    }
+export default Client;
+
+export {
+    AttributeModel,
+    CartModel,
+    CartUnitModel,
+    CategoryModel,
+    DimensionsModel,
+    MeasurementModel,
+    Model,
+    PriceModel,
+    ProductModel,
+    Status,
+    StatusModel
 }
