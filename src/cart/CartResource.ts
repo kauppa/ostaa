@@ -1,6 +1,8 @@
 import log from "tipu";
 import Resource from "../resources";
 import CartModel from "./CartModel";
+import CheckoutModel from "./CheckoutModel";
+import OrderModel from "./OrderModel";
 
 class CartResource extends Resource {
     /**
@@ -21,9 +23,17 @@ class CartResource extends Resource {
      * @returns A promise with a single `CartModel` object.
      */
     update(id: string, cart: CartModel): Promise<CartModel> {
-        // FIXME: This will be changed soon.
-        let data = cart.items;
-        return this.client.put(`/cart/${id}/items`, data);
+        return this.client.put(`/cart/${id}`, cart);
+    }
+
+    /**
+     * Checkout this cart and place an order using the checkout data.
+     *
+     * @param id Identity of the user.
+     * @returns A promise with a single `OrderModel` object.
+     */
+    checkout(id: string): Promise<OrderModel> {
+        return this.client.put(`/cart/${id}/checkout`, {});
     }
 }
 

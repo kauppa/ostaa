@@ -21,25 +21,25 @@ class ProductModel extends Model {
 
     description: string = "";
 
-    overview: string | null = null;
+    overview: string | undefined;
 
-    categories: CategoryModel[] | null = [];
+    categories: CategoryModel[] | undefined = [];
 
-    tags: string[] | null = [];
+    tags: string[] | undefined = [];
 
-    dimensions: DimensionsModel | null = new DimensionsModel();
+    dimensions: DimensionsModel | undefined = new DimensionsModel();
 
-    color: string | null = null;
+    color: string | undefined;
 
-    weight: MeasurementModel | null = new MeasurementModel();
+    weight: MeasurementModel | undefined = new MeasurementModel();
 
     inventory: number = 0;
 
     price: PriceModel = new PriceModel();
 
-    taxInclusive: boolean | null = null;
+    taxInclusive: boolean | undefined;
 
-    actualPrice: number | null = null;
+    actualPrice: number | undefined;
 
     custom: AttributeModel[] = [];
 }

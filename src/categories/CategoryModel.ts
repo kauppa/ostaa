@@ -2,15 +2,11 @@ import Model from "../models";
 
 class CategoryModel extends Model {
 
-    id: string | null;
+    id: string | undefined;
 
-    name: string | null;
+    name: string | undefined;
 
-    description: string | null;
-
-    static instantiateFrom(object: {}): CategoryModel {
-        return Object.assign(new CategoryModel(), object);
-    }
+    description: string | undefined;
 }
 
 export default CategoryModel;

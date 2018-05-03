@@ -1,5 +1,6 @@
 import Model from "../models";
 import CartUnitModel from "./CartUnitModel";
+import CheckoutModel from "./CheckoutModel";
 import PriceModel from "../models";
 
 /**
@@ -13,9 +14,11 @@ class CartModel extends Model {
 
     items: CartUnitModel[] = [];
 
-    netPrice: PriceModel | null = null;
+    netPrice: PriceModel | undefined;
 
-    grossPrice: PriceModel | null = null;
+    grossPrice: PriceModel | undefined;
+
+    checkoutData: CheckoutModel | undefined = new CheckoutModel();
 }
 
 export default CartModel;
