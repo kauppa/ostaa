@@ -1,7 +1,7 @@
-import Model, { PriceModel } from "../models";
+import Model from "../models";
 
 /**
- * Tax data for a single cart item.
+ * Tax data for a single order/cart unit.
  */
 class UnitTaxModel extends Model {
 
@@ -9,7 +9,7 @@ class UnitTaxModel extends Model {
 
     rate: number;
 
-    total: PriceModel;
+    total: number;
 }
 
 export default UnitTaxModel;
