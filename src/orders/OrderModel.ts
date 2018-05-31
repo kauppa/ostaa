@@ -1,5 +1,5 @@
 import Model, { MeasurementModel } from "../models";
-import AddressModel from "./AddressModel";
+import AddressModel from "../cart/AddressModel";
 import OrderUnitModel from "./OrderUnitModel";
 
 /**

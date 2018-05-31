@@ -1,5 +1,6 @@
 import AttributeModel from "./attributes/AttributeModel";
-import { AddressModel, CartModel, OrderUnitModel, CheckoutModel, OrderModel } from "./cart";
+import { AddressModel, CartModel, CheckoutModel } from "./cart";
+import { OrderModel, OrderUnitModel } from "./orders";
 import CategoryModel from "./categories/CategoryModel";
 import { DimensionsModel, MeasurementModel, Model } from "./models";
 import { Status, StatusModel } from "./models";

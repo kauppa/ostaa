@@ -1,5 +1,5 @@
 import Model from "../models";
-import UnitTaxModel from "./UnitTaxModel";
+import UnitTaxModel from "../cart/UnitTaxModel";
 
 /**
  * A unit of cart/order containing the item, quantity, price and tax information.
