@@ -4,6 +4,7 @@ import AttributeResource from "./attributes/AttributeResource";
 import CartResource from "./cart/CartResource";
 import CategoryResource from "./categories/CategoryResource";
 import Config from "./Config";
+import OrdersResource from "./orders/OrdersResource";
 import ProductResource from "./products/ProductResource";
 import { Model } from "./models";
 
@@ -42,6 +43,11 @@ class Client {
     readonly categories: CategoryResource;
 
     /**
+     * Orders resource controller for fetching `Order` information.
+     */
+    readonly orders: OrdersResource;
+
+    /**
      * Normalized URL for the API endpoints (e.g. kauppa.naamio.cloud/api).
      */
     readonly url: String;
@@ -65,6 +71,7 @@ class Client {
         this.products = new ProductResource(this);
         this.attributes = new AttributeResource(this);
         this.categories = new CategoryResource(this);
+        this.orders = new OrdersResource(this);
     }
 
     /**

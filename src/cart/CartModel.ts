@@ -1,5 +1,5 @@
 import Model from "../models";
-import OrderUnitModel from "./OrderUnitModel";
+import OrderUnitModel from "../orders/OrderUnitModel";
 import CheckoutModel from "./CheckoutModel";
 
 /**

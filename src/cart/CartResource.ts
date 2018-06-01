@@ -2,7 +2,7 @@ import log from "tipu";
 import Resource from "../resources";
 import CartModel from "./CartModel";
 import CheckoutModel from "./CheckoutModel";
-import OrderModel from "./OrderModel";
+import OrderModel from "../orders/OrderModel";
 
 class CartResource extends Resource {
     /**
