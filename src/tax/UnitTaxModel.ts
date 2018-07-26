@@ -1,7 +1,7 @@
 import Model from "../models";
 
 /**
- * Tax data for a single order/cart unit.
+ * Object representing the tax information of an entity.
  */
 class UnitTaxModel extends Model {
 
@@ -10,6 +10,8 @@ class UnitTaxModel extends Model {
     rate: number;
 
     total: number;
+
+    inclusive: boolean;
 }
 
 export default UnitTaxModel;

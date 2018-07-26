@@ -1,7 +1,11 @@
-import ProductModel from "./ProductModel";
-import ProductResource from './ProductResource';
+import AttributeModel from "./AttributeModel";
+import CategoryModel from "./CategoryModel";
+import ProductResponse from "./ProductResponse";
+import ProductVariantResponse from "./ProductVariantResponse";
 
 export {
-    ProductModel,
-    ProductResource
+    AttributeModel,
+    CategoryModel,
+    ProductResponse,
+    ProductVariantResponse,
 }
