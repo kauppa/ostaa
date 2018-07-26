@@ -1,39 +1,32 @@
 import log from "tipu";
+
 import Resource from "../resources";
-import CartModel from "./CartModel";
-import CheckoutModel from "./CheckoutModel";
-import OrderModel from "../orders/OrderModel";
+import CartRequest from "./CartRequest";
+import CartResponse from "./CartResponse";
 
+/**
+ * Cart resource for persisting and querying carts.
+ */
 class CartResource extends Resource {
+
     /**
-     * Fetches the cart for an user account.
+     * Fetches a single cart based on the ID provided.
      *
-     * @param id Identity of the user.
-     * @returns A promise with a single `CartModel` object.
+     * @param id Identity of the cart to retrieve.
+     * @returns A promise with a single `CartResponse` object.
      */
-    fetch(id: string): Promise<CartModel> {
-        return this.client.get(`/cart/${id}`);
+    fetch(id: string): Promise<CartResponse> {
+        return this.client.get(`/carts/${id}`);
     }
 
     /**
-     * Update an user's cart in the cart service.
+     * Updates a single cart in the service.
      *
-     * @param id Identity of the user.
-     * @param cart Updated `CartModel` to pass to the service.
-     * @returns A promise with a single `CartModel` object.
+     * @param data Updated `CartRequest` to pass to the service.
+     * @returns A promise with a single `CartResponse` object.
      */
-    update(id: string, cart: CartModel): Promise<CartModel> {
-        return this.client.put(`/cart/${id}`, cart);
-    }
-
-    /**
-     * Checkout this cart and place an order using the checkout data.
-     *
-     * @param id Identity of the user.
-     * @returns A promise with a single `OrderModel` object.
-     */
-    checkout(id: string): Promise<OrderModel> {
-        return this.client.put(`/cart/${id}/checkout`, {});
+    update(id: string, data: CartRequest): Promise<CartResponse> {
+        return this.client.put(`/carts/${id}`, data);
     }
 }
 

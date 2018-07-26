@@ -1,7 +1,9 @@
-import OrderModel from "./OrderModel";
+import OrderResponse from "./OrderResponse";
 import OrderUnitModel from "./OrderUnitModel";
+import PickupRequest from "./PickupRequest";
 
 export {
-    OrderModel,
-    OrderUnitModel
+    OrderResponse,
+    OrderUnitModel,
+    PickupRequest,
 }

@@ -1,10 +1,11 @@
-import AttributeModel from "./attributes/AttributeModel";
-import { AddressModel, CartModel, CheckoutModel } from "./cart";
-import { OrderModel, OrderUnitModel } from "./orders";
-import CategoryModel from "./categories/CategoryModel";
-import { DimensionsModel, MeasurementModel, Model } from "./models";
+import { MeasurementModel, Model } from "./models";
 import { Status, StatusModel } from "./models";
-import { ProductModel } from "./products";
+import { AddressModel, CustomerRequest, CustomerResponse } from "./customers";
+import { CartRequest, CartResponse, CartUnitModel } from "./cart";
+import CouponResponse from "./coupons/CouponResponse";
+import { OrderUnitModel, OrderResponse, PickupRequest } from "./orders";
+import { AttributeModel, CategoryModel } from "./products";
+import { ProductResponse, ProductVariantResponse } from "./products";
 import Client from "./Client";
 
 export default Client;
@@ -12,15 +13,20 @@ export default Client;
 export {
     AddressModel,
     AttributeModel,
-    CartModel,
-    OrderUnitModel,
-    CheckoutModel,
+    CartRequest,
+    CartResponse,
+    CartUnitModel,
     CategoryModel,
-    DimensionsModel,
+    CouponResponse,
+    CustomerRequest,
+    CustomerResponse,
     MeasurementModel,
     Model,
-    OrderModel,
-    ProductModel,
+    OrderResponse,
+    OrderUnitModel,
+    PickupRequest,
+    ProductResponse,
+    ProductVariantResponse,
     Status,
-    StatusModel
+    StatusModel,
 }

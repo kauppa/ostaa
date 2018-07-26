@@ -1,10 +1,10 @@
 import log from "tipu";
 
 import Resource from "../resources";
-import ProductModel from './ProductModel';
+import ProductResponse from "./ProductResponse";
 
 /**
- *  Produce resources for persisting and querying products.
+ * Product resources for persisting and querying products.
  */
 class ProductResource extends Resource {
 
@@ -13,9 +13,9 @@ class ProductResource extends Resource {
      *
      * @param first When paging results, this allows the amount of items in the
      *              first page to be specified. Defaults to 20.
-     * @returns A promise with a list of `ProductModel` entities.
+     * @returns A promise with a list of `ProductResponse` entities.
      */
-    fetchAll(first = 20): Promise<ProductModel[]> {
+    fetchAll(first = 20): Promise<ProductResponse[]> {
         return this.client.getAll(`/products`);
     }
 
@@ -23,9 +23,9 @@ class ProductResource extends Resource {
      * Fetches a single product based on the ID provided.
      *
      * @param id Identity of the product to retrieve.
-     * @returns A promise with a single `ProductModel` object.
+     * @returns A promise with a single `ProductResponse` object.
      */
-    fetch(id: string): Promise<ProductModel> {
+    fetch(id: string): Promise<ProductResponse> {
         return this.client.get(`/products/${id}`);
     }
 }

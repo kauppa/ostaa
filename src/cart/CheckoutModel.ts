@@ -1,5 +1,5 @@
 import Model from "../models";
-import AddressModel from "./AddressModel";
+import AddressModel from "../customers/AddressModel";
 
 /**
  * Checkout data required for checking out cart and placing the order.

@@ -5,6 +5,8 @@ import Model from "../models";
  */
 class AddressModel extends Model {
 
+    id: string | undefined;
+
     firstName: string;
 
     lastName: string | undefined;
